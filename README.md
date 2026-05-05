@@ -7,6 +7,9 @@ Built with a decoupled microservice architecture: a FastAPI backend handles the 
 ### 📁 Project Structure
 ```
 cancer-predictor/
+├── .github/
+│   └── workflows/
+│       └── ci.yml
 ├── docker-compose.yml      
 ├── Dockerfile.api          
 ├── Dockerfile.ui           
@@ -29,6 +32,7 @@ Visualization: Matplotlib (Agg backend for containerized base64 encoding)
 Frontend: Streamlit
 Containerization: Docker
 Orchestration: Docker Compose
+CI/CD GitHub Actions
 ```
 
 ###🚀 Quick Start 
