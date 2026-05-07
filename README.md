@@ -9,18 +9,16 @@ An interactive, containerized machine learning application that trains a PyTorch
 https://github.com/user-attachments/assets/cdcdfec1-8220-4d51-97ed-47ff129eee8c
 
 
-### 🧠 Key Model Design Choices
+### 🧠 Model Architecture
 
 ```mermaid
 graph TD
-    A[Input Layer<br>Dynamic Size] --> B[Dense + ReLU + Dropout 0.2]
-    B --> C[Dense + ReLU + Dropout 0.2<br>Compressed Size]
-    C --> D[Dense 1 + Sigmoid]
-    D --> E((Output: 0.0 to 1.0))
+    A[Input Layer<br>Dynamic Size] --> B[Dense + ReLU + Dropout 0.2] B --> C[Dense + ReLU + Dropout 0.2<br>Compressed Size] C --> D[Dense 1 + Sigmoid] D --> E((Output: 0.0 to 1.0))
     
     style A fill:#161616,stroke:#333,stroke-width:2px
     style E fill:#13431b,stroke:#28a745,stroke-width:2px
 ```
+Key Model Design Choices
 - Dynamic Input Layer: The model automatically re-initializes its input dimension when the user swaps datasets (e.g., 30 features for Cancer, 15 for Churn).
 - Dropout (p=0.2): Randomly disables 20% of neurons during training to prevent overfitting on small datasets.
 - Sigmoid Output: Compresses the final neuron into a probability, thresholded at 0.5 for binary classification.
